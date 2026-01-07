@@ -4,10 +4,12 @@
  */
 
 import { Zap, Play, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
+import { useParams } from 'react-router-dom';
 import { MockLabel } from '@/components/ui/MockLabel';
 import { mockEdgeFunctions } from '@/data/mockData';
 
-export default function EdgeFunctions() {
+function EdgeFunctions() {
+  const { projectId } = useParams<{ projectId: string }>();
   const formatDate = (timestamp: string) => {
     return new Date(timestamp).toLocaleDateString('en-US', {
       month: 'short',
@@ -55,7 +57,7 @@ export default function EdgeFunctions() {
           </div>
           <button 
             disabled
-            className="flex items-center gap-2 px-4 py-2 bg-primary/20 text-primary/50 rounded-md text-sm cursor-not-allowed"
+            className="flex items-center gap-2 px-4 py-2 bg-orange-600/20 text-orange-600/50 rounded-md text-sm cursor-not-allowed"
           >
             <Zap className="w-4 h-4" />
             Deploy Function
@@ -80,7 +82,7 @@ export default function EdgeFunctions() {
               <tr key={fn.name} className="border-b border-border last:border-0">
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-primary" />
+                    <Zap className="w-4 h-4 text-orange-600" />
                     <span className="font-mono text-foreground">{fn.name}</span>
                   </div>
                 </td>
@@ -111,3 +113,5 @@ export default function EdgeFunctions() {
     </div>
   );
 }
+
+export default EdgeFunctions;

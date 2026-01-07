@@ -3,11 +3,12 @@
  * Table of mock authenticated users
  */
 
-import { Users, Mail, Phone } from 'lucide-react';
-import { MockLabel } from '@/components/ui/MockLabel';
-import { mockAuthUsers } from '@/data/mockData';
 
-export default function AuthUsers() {
+import { useParams } from 'react-router-dom';
+
+function AuthUsers() {
+  const { projectId } = useParams<{ projectId: string }>();
+  // In a real app, filter users by projectId
   const formatDate = (timestamp: string) => {
     return new Date(timestamp).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -23,11 +24,17 @@ export default function AuthUsers() {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <h1 className="text-2xl font-semibold">Users</h1>
+          <h1 className="text-2xl font-semibold">Project Auth Users</h1>
           <MockLabel />
         </div>
         <p className="text-muted-foreground">
-          Manage authenticated users
+          All users are scoped to this project and managed via a single unified API (Mock).
+        </p>
+      </div>
+
+      <div className="bg-card border border-border rounded-lg p-4 mb-6 text-center">
+        <p className="text-xs text-muted-foreground">
+          <strong>Project-scoped:</strong> Only users registered to this project are shown. This is a mock demonstration. No real users are created or managed.
         </p>
       </div>
 
@@ -100,3 +107,5 @@ export default function AuthUsers() {
     </div>
   );
 }
+
+export default AuthUsers;

@@ -4,7 +4,7 @@
  */
 
 import { useState } from 'react';
-import { MapPin, Download, Server, Trash2, AlertTriangle, FileJson, Info } from 'lucide-react';
+import { MapPin, Download, Server, Trash2, AlertTriangle, FileJson, Info, Zap } from 'lucide-react';
 import { MockLabel } from '@/components/ui/MockLabel';
 import {
   Tooltip,
@@ -34,10 +34,115 @@ export default function Settings() {
       </div>
 
       <div className="space-y-6">
+        {/* Plan & Usage */}
+        <div className="bg-card border border-border rounded-lg p-6">
+          <div className="flex items-start gap-4">
+            <Zap className="w-5 h-5 text-orange-600 mt-0.5" />
+            <div className="flex-1">
+              <h3 className="font-medium mb-1">Plan & Usage</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Current plan and resource usage (Mock)
+              </p>
+              
+              {/* Current Plan */}
+              <div className="mb-6 p-4 bg-muted/30 rounded-lg border border-border">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-semibold">Current Plan</span>
+                  <span className="text-sm font-mono font-bold text-orange-600">STARTER — ₹499/mo</span>
+                </div>
+                <p className="text-xs text-muted-foreground mb-3">
+                  For indie devs and early production apps
+                </p>
+                <button className="text-xs text-orange-600 hover:underline">
+                  Change plan
+                </button>
+              </div>
+
+              {/* Usage Indicators */}
+              <div className="space-y-4">
+                {/* Database Storage */}
+                <div>
+                  <div className="flex items-center justify-between text-sm mb-2">
+                    <span className="text-muted-foreground">Database Storage</span>
+                    <span className="font-mono text-sm">2.3 GB / 5 GB</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div 
+                      className="bg-orange-600 rounded-full h-2" 
+                      style={{ width: '46%' }}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* Monthly Active Users (Auth) */}
+                <div>
+                  <div className="flex items-center justify-between text-sm mb-2">
+                    <span className="text-muted-foreground">Monthly Active Users</span>
+                    <span className="font-mono text-sm">3,420 / 10,000</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div 
+                      className="bg-orange-600 rounded-full h-2" 
+                      style={{ width: '34%' }}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* Realtime Messages */}
+                <div>
+                  <div className="flex items-center justify-between text-sm mb-2">
+                    <span className="text-muted-foreground">Realtime Messages</span>
+                    <span className="font-mono text-sm">245,000 / 1,000,000</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div 
+                      className="bg-orange-600 rounded-full h-2" 
+                      style={{ width: '24%' }}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* Function Invocations */}
+                <div>
+                  <div className="flex items-center justify-between text-sm mb-2">
+                    <span className="text-muted-foreground">Function Invocations</span>
+                    <span className="font-mono text-sm">156,000 / 1,000,000</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div 
+                      className="bg-orange-600 rounded-full h-2" 
+                      style={{ width: '15%' }}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* Storage */}
+                <div>
+                  <div className="flex items-center justify-between text-sm mb-2">
+                    <span className="text-muted-foreground">Object Storage</span>
+                    <span className="font-mono text-sm">4.2 GB / 10 GB</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div 
+                      className="bg-orange-600 rounded-full h-2" 
+                      style={{ width: '42%' }}
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-xs text-muted-foreground mt-4">
+                <MockLabel /> All usage values are simulated for demonstration. 
+                Soft warnings appear at 80% utilization.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Region */}
         <div className="bg-card border border-border rounded-lg p-6">
           <div className="flex items-start gap-4">
-            <MapPin className="w-5 h-5 text-primary mt-0.5" />
+            <MapPin className="w-5 h-5 text-orange-600 mt-0.5" />
             <div className="flex-1">
               <h3 className="font-medium mb-1">Region</h3>
               <p className="text-sm text-muted-foreground mb-3">

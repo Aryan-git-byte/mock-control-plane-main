@@ -24,7 +24,7 @@ export default function Projects() {
         </div>
         <Link 
           to="/dashboard/new"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:bg-primary/90 transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-orange-600 text-white rounded-md text-sm font-medium hover:bg-orange-700 transition-colors"
         >
           <Plus className="w-4 h-4" />
           New Project
@@ -37,7 +37,7 @@ export default function Projects() {
           <p className="text-muted-foreground mb-4">No projects yet</p>
           <Link 
             to="/dashboard/new"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-orange-600 text-white rounded-md text-sm font-medium hover:bg-orange-700 transition-colors"
           >
             <Plus className="w-4 h-4" />
             Create your first project
@@ -49,12 +49,12 @@ export default function Projects() {
             <Link 
               key={project.id}
               to={`/dashboard/project/${project.id}`}
-              className="block p-5 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors group"
+              className="block p-5 bg-card border border-border rounded-lg hover:border-orange-600/50 transition-colors group"
             >
               <div className="flex items-start justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <h3 className="font-medium text-foreground group-hover:text-primary transition-colors font-mono">
+                    <h3 className="font-medium text-foreground group-hover:text-orange-600 transition-colors font-mono">
                       {project.name}
                     </h3>
                     <MockLabel />

@@ -1,3 +1,48 @@
+// Mock backend services for one-click hosting
+export const mockBackendServices = [
+  {
+    id: 'svc_001',
+    name: 'express-api',
+    description: 'Node.js Express REST API',
+    url: 'https://express-api-mock.setubase.app',
+    status: 'running',
+  },
+  {
+    id: 'svc_002',
+    name: 'python-fastapi',
+    description: 'Python FastAPI microservice',
+    url: 'https://fastapi-mock.setubase.app',
+    status: 'running',
+  },
+  {
+    id: 'svc_003',
+    name: 'go-backend',
+    description: 'Go Fiber backend',
+    url: 'https://go-backend-mock.setubase.app',
+    status: 'stopped',
+  },
+];
+// Mock API Keys
+export const mockApiKeys = [
+  { id: 'key_001', name: 'Default Service Key', key: 'sb_mock_service_key_xxxxxxxxx', createdAt: '2024-01-01', role: 'service_role', projectId: 'proj_001' },
+  { id: 'key_002', name: 'Anon Public Key', key: 'sb_mock_anon_key_xxxxxxxxx', createdAt: '2024-01-01', role: 'anon', projectId: 'proj_001' },
+  { id: 'key_003', name: 'Default Service Key', key: 'sb_mock_service_key_yyyyyyyyy', createdAt: '2024-01-01', role: 'service_role', projectId: 'proj_002' },
+  { id: 'key_004', name: 'Anon Public Key', key: 'sb_mock_anon_key_yyyyyyyyy', createdAt: '2024-01-01', role: 'anon', projectId: 'proj_002' },
+];
+
+// Mock Usage Stats
+export const mockUsageStats = [
+  { projectId: 'proj_001', bandwidth: 2.3, dbSize: 120, storage: 0.8, requests: 1247, period: '24h' },
+  { projectId: 'proj_002', bandwidth: 1.1, dbSize: 80, storage: 0.3, requests: 800, period: '24h' },
+  { projectId: 'proj_003', bandwidth: 0.2, dbSize: 10, storage: 0.1, requests: 50, period: '24h' },
+];
+
+// Mock Backups
+export const mockBackups = [
+  { id: 'backup_001', projectId: 'proj_001', createdAt: '2024-01-05T10:00:00Z', size: '120MB', status: 'completed' },
+  { id: 'backup_002', projectId: 'proj_001', createdAt: '2024-01-06T10:00:00Z', size: '121MB', status: 'completed' },
+  { id: 'backup_003', projectId: 'proj_002', createdAt: '2024-01-05T10:00:00Z', size: '80MB', status: 'completed' },
+];
 /**
  * MOCK DATA - SetuBase Developer Platform
  * All data is fake and for demonstration purposes only

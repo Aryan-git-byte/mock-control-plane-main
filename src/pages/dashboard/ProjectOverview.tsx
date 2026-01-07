@@ -32,7 +32,7 @@ export default function ProjectOverview() {
     return (
       <div className="p-8">
         <p className="text-muted-foreground">Project not found</p>
-        <Link to="/dashboard" className="text-primary hover:underline mt-2 inline-block">
+        <Link to="/dashboard" className="text-orange-600 hover:underline mt-2 inline-block">
           Back to Projects
         </Link>
       </div>
@@ -79,7 +79,7 @@ export default function ProjectOverview() {
         {/* Backend Section */}
         <div className="bg-card border border-border rounded-lg p-6">
           <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-            <Database className="w-5 h-5 text-primary" />
+            <Database className="w-5 h-5 text-orange-600" />
             Backend Stack
             <MockLabel className="ml-auto" />
           </h2>
@@ -117,7 +117,7 @@ export default function ProjectOverview() {
         {/* Application Section */}
         <div className="bg-card border border-border rounded-lg p-6">
           <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-            <Activity className="w-5 h-5 text-primary" />
+            <Activity className="w-5 h-5 text-orange-600" />
             Application
             <MockLabel className="ml-auto" />
           </h2>
@@ -135,7 +135,7 @@ export default function ProjectOverview() {
                 href={project.publicUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-primary hover:underline flex items-center gap-1 font-mono text-sm truncate max-w-[200px]"
+                className="text-orange-600 hover:underline flex items-center gap-1 font-mono text-sm truncate max-w-[200px]"
               >
                 {project.publicUrl.replace('https://', '')}
                 <ExternalLink className="w-3 h-3 flex-shrink-0" />

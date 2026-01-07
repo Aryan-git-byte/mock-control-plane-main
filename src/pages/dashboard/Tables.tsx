@@ -4,13 +4,16 @@
  */
 
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { Layers, Lock, LockOpen, ArrowLeft, Table2 } from 'lucide-react';
 import { MockLabel } from '@/components/ui/MockLabel';
 import { mockTables, mockTableData } from '@/data/mockData';
 
-export default function Tables() {
-  const [selectedTable, setSelectedTable] = useState<string | null>(null);
 
+export default function Tables() {
+  const { projectId } = useParams<{ projectId: string }>();
+  const [selectedTable, setSelectedTable] = useState<string | null>(null);
+  // In a real app, filter tables by projectId
   const tableData = selectedTable ? mockTableData[selectedTable as keyof typeof mockTableData] : null;
 
   if (selectedTable && tableData) {
@@ -102,7 +105,7 @@ export default function Tables() {
               <tr key={table.name} className="border-b border-border last:border-0 hover:bg-muted/30 transition-colors">
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-2">
-                    <Table2 className="w-4 h-4 text-primary" />
+                    <Table2 className="w-4 h-4 text-orange-600" />
                     <span className="font-mono text-foreground">{table.name}</span>
                   </div>
                 </td>
@@ -126,7 +129,7 @@ export default function Tables() {
                   {mockTableData[table.name as keyof typeof mockTableData] ? (
                     <button
                       onClick={() => setSelectedTable(table.name)}
-                      className="text-primary hover:underline text-sm"
+                      className="text-orange-600 hover:underline text-sm"
                     >
                       View Data
                     </button>

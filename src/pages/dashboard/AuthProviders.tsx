@@ -21,11 +21,17 @@ export default function AuthProviders() {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <h1 className="text-2xl font-semibold">Auth Providers</h1>
+          <h1 className="text-2xl font-semibold">Project Auth Providers</h1>
           <MockLabel />
         </div>
         <p className="text-muted-foreground">
-          Configure authentication methods
+          Configure authentication methods for this project. All providers are managed via a single unified API (Mock).
+        </p>
+      </div>
+
+      <div className="bg-card border border-border rounded-lg p-4 mb-6 text-center">
+        <p className="text-xs text-muted-foreground">
+          <strong>Project-scoped:</strong> Auth providers are isolated per project. This is a mock demonstration. No real authentication is performed.
         </p>
       </div>
 
@@ -41,8 +47,8 @@ export default function AuthProviders() {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <div className={`p-3 rounded-lg ${provider.enabled ? 'bg-primary/10' : 'bg-muted'}`}>
-                    <IconComponent className={`w-5 h-5 ${provider.enabled ? 'text-primary' : 'text-muted-foreground'}`} />
+                  <div className={`p-3 rounded-lg ${provider.enabled ? 'bg-orange-600/10' : 'bg-muted'}`}>
+                    <IconComponent className={`w-5 h-5 ${provider.enabled ? 'text-orange-600' : 'text-muted-foreground'}`} />
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground">{provider.name}</h3>
@@ -75,7 +81,7 @@ export default function AuthProviders() {
       </div>
 
       <p className="text-xs text-muted-foreground mt-6 text-center">
-        Mock configuration — provider settings are not persisted
+        Mock configuration — provider settings are not persisted or connected to real auth systems.
       </p>
     </div>
   );

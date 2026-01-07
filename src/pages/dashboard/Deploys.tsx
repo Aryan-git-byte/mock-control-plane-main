@@ -1,14 +1,14 @@
-/**
- * Deploys Page - Mock Deployment Timeline
- * Timeline of deploy events with expandable logs
- */
 
+import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { Rocket, CheckCircle, XCircle, GitBranch, Clock, ChevronDown, ChevronUp } from 'lucide-react';
 import { MockLabel } from '@/components/ui/MockLabel';
 import { mockDeploys } from '@/data/mockData';
 
-export default function Deploys() {
+function Deploys() {
+
+  const { projectId } = useParams<{ projectId: string }>();
+  // In a real app, filter deploys by projectId
   const [expandedDeploy, setExpandedDeploy] = useState<string | null>(null);
 
   const formatDate = (timestamp: string) => {
@@ -149,3 +149,5 @@ export default function Deploys() {
     </div>
   );
 }
+
+export default Deploys;

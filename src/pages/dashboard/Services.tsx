@@ -40,13 +40,13 @@ export default function Services() {
             <Link 
               key={project.id}
               to={`/dashboard/project/${project.id}`}
-              className="block p-5 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors group"
+              className="block p-5 bg-card border border-border rounded-lg hover:border-orange-600/50 transition-colors group"
             >
               <div className="flex items-start justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <Server className="w-5 h-5 text-primary" />
-                    <h3 className="font-medium text-foreground font-mono group-hover:text-primary transition-colors">
+                    <Server className="w-5 h-5 text-orange-600" />
+                    <h3 className="font-medium text-foreground font-mono group-hover:text-orange-600 transition-colors">
                       {project.name}
                     </h3>
                     <span className="text-xs px-2 py-0.5 bg-muted rounded text-muted-foreground">

@@ -36,8 +36,8 @@ export default function SqlEditor() {
       </div>
 
       {/* Banner */}
-      <div className="flex items-center gap-3 px-4 py-3 bg-primary/10 border border-primary/20 rounded-lg mb-6">
-        <AlertCircle className="w-5 h-5 text-primary flex-shrink-0" />
+      <div className="flex items-center gap-3 px-4 py-3 bg-orange-600/10 border border-orange-600/20 rounded-lg mb-6">
+        <AlertCircle className="w-5 h-5 text-orange-600 flex-shrink-0" />
         <p className="text-sm text-foreground">
           <strong>Mock SQL Editor</strong> — No queries will be executed. This is a demonstration interface.
         </p>
@@ -53,7 +53,7 @@ export default function SqlEditor() {
           </div>
           <button 
             disabled
-            className="flex items-center gap-2 px-4 py-1.5 bg-primary/20 text-primary/50 rounded text-sm cursor-not-allowed"
+            className="flex items-center gap-2 px-4 py-1.5 bg-orange-600/20 text-orange-600/50 rounded text-sm cursor-not-allowed"
           >
             <Play className="w-4 h-4" />
             Run Query

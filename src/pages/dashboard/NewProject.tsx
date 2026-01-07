@@ -131,7 +131,7 @@ export default function NewProject() {
         <div className="pt-4">
           <button
             type="submit"
-            className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors"
+            className="w-full px-4 py-3 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-700 transition-colors"
           >
             Create Project
           </button>

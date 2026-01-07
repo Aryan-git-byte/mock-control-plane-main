@@ -16,11 +16,18 @@ export default function Databases() {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <h1 className="text-2xl font-semibold">Databases</h1>
+          <h1 className="text-2xl font-semibold">Project Database</h1>
           <MockLabel />
         </div>
         <p className="text-muted-foreground">
-          Managed PostgreSQL instances for your projects
+          Each project has its own dedicated PostgreSQL database, managed and accessed via a single unified API (Mock).
+        </p>
+      </div>
+
+      <div className="bg-card border border-border rounded-lg p-4 mb-6 text-center">
+        <p className="text-xs text-muted-foreground">
+          <strong>Project-scoped:</strong> All data is isolated per project. Want only a database, no backend? Use SetuBase as a managed database provider and connect from any external app or service.<br />
+          <span className="block mt-2">This is a mock demonstration. No real databases are provisioned.</span>
         </p>
       </div>
 
@@ -28,7 +35,7 @@ export default function Databases() {
       {projects.length === 0 ? (
         <div className="text-center py-16 bg-card border border-border rounded-lg">
           <Database className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-          <p className="text-muted-foreground">No databases yet</p>
+          <p className="text-muted-foreground">No project databases yet</p>
           <p className="text-sm text-muted-foreground mt-1">
             Create a project to provision a database
           </p>
@@ -43,7 +50,7 @@ export default function Databases() {
               <div className="flex items-start justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <Database className="w-5 h-5 text-primary" />
+                    <Database className="w-5 h-5 text-orange-600" />
                     <h3 className="font-medium text-foreground font-mono">
                       {project.name}-db
                     </h3>
@@ -61,7 +68,8 @@ export default function Databases() {
                     </span>
                   </div>
                   <div className="text-xs text-muted-foreground font-mono">
-                    Connection: postgres://mock:****@db.{project.name}.supabase.co:5432/postgres
+                    <span>Connection string (mock):</span><br />
+                    postgres://mock:****@db.{project.name}.supabase.co:5432/postgres
                   </div>
                 </div>
               </div>
